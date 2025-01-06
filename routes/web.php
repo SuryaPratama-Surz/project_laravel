@@ -108,3 +108,8 @@ Route::get('/struck/{a}/{b}/{c}/{d}/{e}/{f}', function ($nama,$tlp,$barang,$nama
 
 });
 
+
+Route::get('/siswa', function () {
+    $datasiswa = ['Agus','Tenki','Muhduk','Saprudin'];
+   return view('tampil', compact('datasiswa'));
+});
