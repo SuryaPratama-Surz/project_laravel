@@ -8,6 +8,8 @@
 </head>
 <body>
     
+    <h1>DATA OPET</h1>
+
    @foreach ($datasiswa as $data)
 
        <h1><li>{{ $data }}</li></h1>
