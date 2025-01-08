@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\Post;
+use App\Models\barang;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -113,3 +116,23 @@ Route::get('/siswa', function () {
     $datasiswa = ['Agus','Tenki','Muhduk','Saprudin'];
    return view('tampil', compact('datasiswa'));
 });
+
+
+//routeing dengan model
+
+Route::get('/post', function () {
+
+    $post = Post::all();
+    return view('tampil_post' , compact('post'));
+
+});
+
+Route::get('/barang', function () {
+   
+    //visi(kata yang dicari)
+    $barangs = barang::where('nama_barang','LIKE','%visi%')->get();
+    // $barangs = barang::where('id',2)->get();
+    return view ('tampil_barang' , compact('barangs'));
+
+});
+

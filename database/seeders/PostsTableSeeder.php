@@ -15,11 +15,14 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        //data
+        //data        
         $posts = [
         ['title'=>'Tips Cepat Pintar','content'=>'Belajar'],
         ['title'=>'Haruskah Menunda Belajar?','content'=>'Gak'],
+        ['title'=>'Makanan Terenak','content'=>'Tahu Gejrot'],
+        ['title'=>'Game Terbaik','content'=>'Epep'],
         ['title'=>'Membangun Visi Misi Kesuksesan','content'=>'Sholat']];
+        
         
         //mengirim data ke db
         DB::table('posts')->insert($posts);

@@ -20,6 +20,7 @@ class BarangsTableSeeder extends Seeder
             ['nama_barang'=>'Laptop','merk'=>'Axxio','harga'=>'277000'],
             ['nama_barang'=>'Televisi','merk'=>'Sharp','harga'=>'12000'],
             ['nama_barang'=>'Sepatu','merk'=>'Nike','harga'=>'12000'],
+            ['nama_barang'=>'Sepatu','merk'=>'Adidas','harga'=>'11000'],
             ['nama_barang'=>'Teflon','merk'=>'Mamamia','harga'=>'150']];
 
             DB::table('barangs')->insert($barangs);                                   
