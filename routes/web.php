@@ -1,8 +1,8 @@
 <?php
 
-use App\Models\Post;
-use App\Models\barang;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 
 /*
@@ -118,21 +118,19 @@ Route::get('/siswa', function () {
 });
 
 
+//routing dengan controller
+Route::get('/post', [PostController::class, 'menampilkan_post']);
+
 //routeing dengan model
 
-Route::get('/post', function () {
 
-    $post = Post::all();
-    return view('tampil_post' , compact('post'));
 
-});
-
-Route::get('/barang', function () {
+Route::get('/barang',[PostController::class, 'menampilkan_barang']);
    
     //visi(kata yang dicari)
-    $barangs = barang::where('nama_barang','LIKE','%visi%')->get();
+    // $barangs = barang::where('nama_barang','LIKE','%visi%')->get();
     // $barangs = barang::where('id',2)->get();
-    return view ('tampil_barang' , compact('barangs'));
+    // $barangs = barang::all();
+    // return view ('tampil_barang' , compact('barangs'));
 
-});
 
