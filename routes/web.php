@@ -134,3 +134,7 @@ Route::get('/barang',[PostController::class, 'menampilkan_barang']);
     // return view ('tampil_barang' , compact('barangs'));
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
