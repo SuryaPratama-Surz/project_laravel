@@ -3,7 +3,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\SiswasController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/form/{name}/{umur}', function ($name,$umur) {
+Route::get('/form/{name}/{umur}', function ($name, $umur) {
     return 'Selamat datang '. $name . 
             '<br> Anda berusia ' . $umur . ' tahun';
 });
@@ -132,6 +133,9 @@ Route::get('/barang',[PostController::class, 'menampilkan_barang']);
     // $barangs = barang::where('id',2)->get();
     // $barangs = barang::all();
     // return view ('tampil_barang' , compact('barangs'));
+
+Route::resource('siswa', SiswasController::class);
+
 
 
 
