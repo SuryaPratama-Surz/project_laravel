@@ -12,7 +12,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8 mt-5 pt-5">
+        <div class="col-md-8 mt-5">
             <div class="card">
                 <div class="card-header">Data Siswa</div>
                 <div class="card-body">
@@ -36,10 +36,15 @@
                             <td>{{ $data->nama }}</td>
                             <td>{{ $data->jenis_kelamin }}</td>
                             <td>{{ $data->kelas}}</td>
-                            <td class="text-center">
-                                <a href="" class="btn btn-sm btn-primary">Edit</a>
-                                <a href="" class="btn btn-sm btn-warning">Show</a>
-                                <a href="" class="btn btn-sm btn-danger">Delete</a>  
+                            <td class="text-center col-3">
+                              <form action="{{ route('siswa.destroy' , $data->id) }}" method="post">
+                                <a href="{{ route('siswa.edit' , $data->id)}}" class="btn btn-sm btn-primary">Edit</a>
+                                <a href="{{ route('siswa.show' , $data->id)}}" class="btn btn-sm btn-warning">Show</a>
+                                  @csrf
+                                  @method('DELETE')
+                                  <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                </form>
+
                             </td>
                           </tr>
                           @endforeach

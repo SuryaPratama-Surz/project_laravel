@@ -35,7 +35,20 @@ class SiswasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $siswa = new Siswa;
+
+        //kiri harus sama dengan field di database, kanan dari name di form
+
+        $siswa->nis              = $request->nis;
+        $siswa->nama             = $request->nama;
+        $siswa->jenis_kelamin    = $request->jenis_kelamin;
+        $siswa->kelas            = $request->kelas;
+
+        $siswa->save();
+
+        return redirect('siswa')->with('success', 'Data Siswa Berhasil Ditambahkan!');
+
+
     }
 
     /**
@@ -46,7 +59,8 @@ class SiswasController extends Controller
      */
     public function show($id)
     {
-        //
+        $siswa = Siswa::FindOrFail($id);
+        return view('siswa.show', compact('siswa'));
     }
 
     /**
@@ -57,7 +71,8 @@ class SiswasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $siswa = Siswa::FindOrFail($id);
+        return view('siswa.edit', compact('siswa'));
     }
 
     /**
@@ -67,9 +82,20 @@ class SiswasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
-        //
+        $siswa = Siswa::FindOrFail($id);
+
+        $siswa->nis              = $request->nis;
+        $siswa->nama             = $request->nama;
+        $siswa->jenis_kelamin    = $request->jenis_kelamin;
+        $siswa->kelas            = $request->kelas;
+
+        $siswa->save();
+
+        return redirect()->route('siswa.index')->with('success', 'Data Siswa Berhasil Diupdate!');
+
     }
 
     /**
@@ -80,6 +106,8 @@ class SiswasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $siswa = Siswa::FindOrFail($id);
+        $siswa->delete();
+        return redirect()->route('siswa.index')->with('success', 'Data Siswa Berhasil Diupdate!');
     }
 }
