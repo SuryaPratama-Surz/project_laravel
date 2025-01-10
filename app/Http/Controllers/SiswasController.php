@@ -11,6 +11,13 @@ class SiswasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     
+    public function __construct()
+    {
+        $this->middleware('auth');
+    } 
+
+
     public function index()
     {
         $siswa = Siswa::all();
@@ -108,6 +115,6 @@ class SiswasController extends Controller
     {
         $siswa = Siswa::FindOrFail($id);
         $siswa->delete();
-        return redirect()->route('siswa.index')->with('success', 'Data Siswa Berhasil Diupdate!');
+        return redirect()->route('siswa.index')->with('success', 'Data Siswa Berhasil DiHapus!');
     }
 }

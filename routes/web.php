@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SiswasController;
+use App\Http\Controllers\PpdbsController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -136,7 +137,7 @@ Route::get('/barang',[PostController::class, 'menampilkan_barang']);
 
 Route::resource('siswa', SiswasController::class);
 
-
+Route::resource('/ppdb', PpdbsController::class);
 
 
 Auth::routes();
