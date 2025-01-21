@@ -10,8 +10,8 @@ class PostController extends Controller
 {
    public function menampilkan_post(){
 
-    $post = Post::all();
-    return view('tampil_post' , compact('post'));
+      $posts = Post::all();
+      return view ('tampil_post' , compact('posts'));
       
    }  
    

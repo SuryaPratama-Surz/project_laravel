@@ -1,29 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Siswa;
+use App\Models\pengguna;
 use Illuminate\Http\Request;
 
-class SiswasController extends Controller
+class PenggunaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-     
-    public function __construct()
-    {
-        $this->middleware('auth');
-    } 
-
-
     public function index()
     {
-        $siswa = Siswa::all();
-        return view('siswa.index', compact('siswa'));
+        $pengguna = pengguna::all();
+        return view('pengguna.index', compact('pengguna'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -31,7 +23,7 @@ class SiswasController extends Controller
      */
     public function create()
     {
-        return view('siswa.create');
+        return view('pengguna.create');
     }
 
     /**
@@ -42,32 +34,28 @@ class SiswasController extends Controller
      */
     public function store(Request $request)
     {
-        $siswa = new Siswa;
+        $pengguna = new pengguna;
 
         //kiri harus sama dengan field di database, kanan dari name di form
 
-        $siswa->nis              = $request->nis;
-        $siswa->nama             = $request->nama;
-        $siswa->jenis_kelamin    = $request->jenis_kelamin;
-        $siswa->kelas            = $request->kelas;
+        $pengguna->nama              = $request->nama;
+      
+        $pengguna->save();
 
-        $siswa->save();
-
-        return redirect('siswa')->with('success', 'Data Siswa Berhasil Ditambahkan!');
-
+        return redirect('pengguna')->with('success', 'Data Berhasil Ditambahkan!');
 
     }
 
     /**
-     * Display the specified resource
+     * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $siswa = Siswa::FindOrFail($id);
-        return view('siswa.show', compact('siswa'));
+        $pengguna = pengguna::FindOrFail($id);
+        return view('pengguna.show', compact('pengguna'));
     }
 
     /**
@@ -78,8 +66,8 @@ class SiswasController extends Controller
      */
     public function edit($id)
     {
-        $siswa = Siswa::FindOrFail($id);
-        return view('siswa.edit', compact('siswa'));
+        $pengguna = pengguna::FindOrFail($id);
+        return view('pengguna.edit', compact('pengguna'));
     }
 
     /**
@@ -89,20 +77,15 @@ class SiswasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
     public function update(Request $request, $id)
     {
-        $siswa = Siswa::FindOrFail($id);
+        $pengguna = pengguna::FindOrFail($id);
 
-        $siswa ->nis              = $request->nis;
-        $siswa ->nama             = $request->nama;
-        $siswa ->jenis_kelamin    = $request->jenis_kelamin;
-        $siswa ->kelas            = $request->kelas;
-        
-        $siswa->save();
+        $pengguna ->nama             = $request->nama;        
 
-        return redirect()->route('siswa.index')->with('success', 'Data Siswa Berhasil Diupdate!');
+        $pengguna->save();
 
+        return redirect()->route('pengguna.index')->with('success', 'Data Berhasil Diupdate!');
     }
 
     /**
@@ -113,8 +96,8 @@ class SiswasController extends Controller
      */
     public function destroy($id)
     {
-        $siswa = Siswa::FindOrFail($id);
-        $siswa->delete();
-        return redirect()->route('siswa.index')->with('success', 'Data Siswa Berhasil DiHapus!');
+        $pengguna = pengguna::FindOrFail($id);
+        $pengguna->delete();
+        return redirect()->route('pengguna.index')->with('success', 'Data Berhasil DiHapus!');
     }
 }

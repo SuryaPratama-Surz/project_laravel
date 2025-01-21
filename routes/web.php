@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\PenggunaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SiswasController;
@@ -138,6 +138,8 @@ Route::get('/barang',[PostController::class, 'menampilkan_barang']);
 Route::resource('siswa', SiswasController::class);
 
 Route::resource('/ppdb', PpdbsController::class);
+
+Route::resource('/pengguna', PenggunaController::class);
 
 
 Auth::routes();
