@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SiswasController;
 use App\Http\Controllers\PpdbsController;
+use App\Http\Controllers\TelephonesController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -135,11 +136,11 @@ Route::get('/barang',[PostController::class, 'menampilkan_barang']);
     // $barangs = barang::all();
     // return view ('tampil_barang' , compact('barangs'));
 
+    //crud
 Route::resource('siswa', SiswasController::class);
-
 Route::resource('/ppdb', PpdbsController::class);
-
 Route::resource('/pengguna', PenggunaController::class);
+Route::resource('/telephone', TelephonesController::class);
 
 
 Auth::routes();
