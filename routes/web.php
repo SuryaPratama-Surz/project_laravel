@@ -6,10 +6,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SiswasController;
 use App\Http\Controllers\PpdbsController;
-use App\Http\Controllers\ProduksControllerController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\TelephonesController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -147,6 +149,10 @@ Route::resource('/pengguna', PenggunaController::class);
 Route::resource('/telephone', TelephonesController::class);
 Route::resource('/kategori', KategoriController::class);
 Route::resource('/produk', ProdukController::class);
+Route::resource('/product', ProductController::class);
+Route::resource('/customer', CustomerController::class);
+Route::resource('/order', OrderController::class);
+
 
 
 Auth::routes();
