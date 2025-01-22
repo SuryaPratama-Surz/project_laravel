@@ -23,10 +23,14 @@
                         @method('get')
 
                         <div class="mb-3">
-                          <label for="nis" class="form-label">ID Product</label>
-                          <input type="text" class="form-control" value="{{ $order->id_product}}" disabled>
-                        </div> 
-
+                            <label for="nama" class="form-label">ID Product</label><br>
+                            <select name="id_product" id="" class="form-select" disabled>
+                                @foreach ($products as $data)
+                                <option value="{{ $data->id }}" {{ $data->id == $order->id_pengguna ? 'selected' : '' }}>{{ $data->nama_product }}</option>
+                                @endforeach
+                            </select>
+                          </div>
+                          
                         <div class="mb-3">
                             <label for="nis" class="form-label">Quantity</label>
                             <input type="text" class="form-control" value="{{ $order->quantity}}" disabled>
@@ -38,9 +42,13 @@
                         </div> 
 
                         <div class="mb-3">
-                            <label for="nis" class="form-label">ID Customer</label>
-                            <input type="text" class="form-control" value="{{ $order->id_customer}}" disabled>
-                        </div> 
+                            <label for="nama" class="form-label">ID Customer</label><br>
+                            <select name="id_product" id="" class="form-select" disabled>
+                                @foreach ($customer as $data)
+                                <option value="{{ $data->id }}" {{ $data->id == $order->id_pengguna ? 'selected' : '' }}>{{ $data->nama_customer }}</option>
+                                @endforeach
+                            </select>
+                          </div>
 
 
                        

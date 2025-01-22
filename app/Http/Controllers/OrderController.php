@@ -66,7 +66,7 @@ class OrderController extends Controller
         $order = Order::FindOrFail($id);
         $customer = Customers::all();
         $products = Products::all();
-        return view('order.show', compact('order'));
+        return view('order.show', compact('order', 'customer', 'products'));
     }
 
     /**
