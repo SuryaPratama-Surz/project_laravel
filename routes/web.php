@@ -1,10 +1,14 @@
 <?php
 
+
 use App\Http\Controllers\PenggunaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SiswasController;
 use App\Http\Controllers\PpdbsController;
+use App\Http\Controllers\ProduksControllerController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\TelephonesController;
 use Illuminate\Support\Facades\Auth;
 
@@ -141,6 +145,8 @@ Route::resource('siswa', SiswasController::class);
 Route::resource('/ppdb', PpdbsController::class);
 Route::resource('/pengguna', PenggunaController::class);
 Route::resource('/telephone', TelephonesController::class);
+Route::resource('/kategori', KategoriController::class);
+Route::resource('/produk', ProdukController::class);
 
 
 Auth::routes();
