@@ -41,10 +41,10 @@
                             @foreach ($order as $data)
                           <tr>
                             <th scope="row">{{ $no++ }}</th>
-                            <td>{{ $data->id_product}}</td>
+                            <td>{{ $data->product->nama_product }}</td>
                             <td>{{ $data->quantity }}</td>
                             <td>{{ $data->order_date }}</td>
-                            <td>{{ $data->id_customer }}</td>
+                            <td>{{ $data->customer->nama_customer  }}</td>
                             <td class="text-center col-3">
                               <form action="{{ route('order.destroy' , $data->id) }}" method="post">
                                 <a href="{{ route('order.edit' , $data->id)}}" class="btn btn-sm btn-primary">Edit</a>
