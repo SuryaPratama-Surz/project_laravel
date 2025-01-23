@@ -51,10 +51,19 @@ class SiswasController extends Controller
         $siswa->jenis_kelamin    = $request->jenis_kelamin;
         $siswa->kelas            = $request->kelas;
 
+       
+        if ($request->hasFile('cover')) {
+            $img = $request->file('cover');
+            $name = rand(1000, 9999) . $img->getClientOriginalName(); // Menggabungkan angka acak dengan nama file
+            $img->move('images/siswa', $name); // Memindahkan file ke folder yang dituju
+            $siswa->cover = $name; // Menyimpan nama file ke properti cover
+        }
+        
+
+
         $siswa->save();
 
-        return redirect('siswa')->with('success', 'Data Siswa Berhasil Ditambahkan!');
-
+        return redirect()->route('siswa.index')->with('success', 'Data Siswa Berhasil Ditambahkan!');
 
     }
 
@@ -99,9 +108,21 @@ class SiswasController extends Controller
         $siswa ->jenis_kelamin    = $request->jenis_kelamin;
         $siswa ->kelas            = $request->kelas;
         
+
+
+        if ($request->hasFile('cover')) {
+            $siswa->deleteImage();
+            $img = $request->file('cover');
+            $name = rand(1000, 9999) . $img->getClientOriginalName(); // Menggabungkan angka acak dengan nama file
+            $img->move('images/siswa', $name); // Memindahkan file ke folder yang dituju
+            $siswa->cover = $name; // Menyimpan nama file ke properti cover
+        }
+
         $siswa->save();
 
-        return redirect()->route('siswa.index')->with('success', 'Data Siswa Berhasil Diupdate!');
+        session()->flash('success', 'Data Siswa Berhasil Diupdate!');
+
+        return redirect()->route('siswa.index');
 
     }
 

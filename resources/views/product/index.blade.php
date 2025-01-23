@@ -33,6 +33,7 @@
                             <th scope="col">Merk</th>
                             <th scope="col">Price</th>
                             <th scope="col">Stock</th>
+                            <th scope="col">Cover</th>
                             <th scope="col" class="text-center">Action</th>
                           </tr>
                         </thead>
@@ -45,6 +46,9 @@
                             <td>{{ $data->merk }}</td>
                             <td>Rp. {{ number_format($data->price) }}</td>
                             <td>{{ $data->stock }}</td>
+                            <td> 
+                              <img src="{{ asset('/images/product/' . $data->cover) }}" width="70" alt="">
+                            </td>  
                             <td class="text-center col-3">
                               <form action="{{ route('product.destroy' , $data->id) }}" method="post">
                                 <a href="{{ route('product.edit' , $data->id)}}" class="btn btn-sm btn-primary">Edit</a>

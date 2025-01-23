@@ -19,23 +19,30 @@
                 <div class="card-body">
                     <form action="{{ route('siswa.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
+
                         <div class="mb-3">
                           <label for="nis" class="form-label">NIS</label>
                           <input type="number" class="form-control" id="nis" name="nis" placeholder="Masukkan NIS" required>
                         </div> 
+
                         <div class="mb-3">
                           <label for="nama" class="form-label">Nama</label>
                           <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" required>
                         </div>
+
                         <div class="mb-3">
-                          <label for="jenis_kelamin" class="form-label">Jenis Kelamin : </label>
+
+                        <label for="jenis_kelamin" class="form-label">Jenis Kelamin : </label>
                          <input type="radio" id="jenis_kelamin" name="jenis_kelamin" value="Laki-laki">
                          Laki-laki
                         </input>
+
                          <input type="radio" id="jenis_kelamin" name="jenis_kelamin" value="Perempuan">
                             Perempuan
                         </input>   
+                        
                         </div>
+
                         <div>
                         <select name="kelas" id="" class="form-select" required>
                             <option value="">Pilih Kelas</option>
@@ -44,6 +51,12 @@
                             <option value="XI RPL 3">XI RPL 3</option>
                         </select>
                         </div>
+
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Cover</label>
+                            <input type="file" class="form-control" id="Cover" name="cover" placeholder="Masukkan Cover" required>
+                       </div>
+
                         <div>
                         <input type="submit" name="simpan" value="Simpan" class="btn btn-success mt-3">
             </div>

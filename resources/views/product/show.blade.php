@@ -42,6 +42,13 @@
                             <input type="text" class="form-control" value="{{ $products->stock}}" disabled>
                         </div> 
 
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Cover</label>
+                            <br>
+                            <img src="{{ asset('/images/product/' . $products->cover) }}" width="100" alt="">
+                        </div>
+
+
 
                        
                         <div>

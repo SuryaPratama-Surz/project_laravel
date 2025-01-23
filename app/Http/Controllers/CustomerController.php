@@ -36,6 +36,16 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
+         // Validasi input
+         $request->validate([
+            'nama_product' => 'required|string|max:255',
+            'merk' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'stock' => 'required|integer|min:0',
+
+            
+        ]);
+
         $customer = new Customers;
 
         //kiri harus sama dengan field di database, kanan dari name di form
@@ -83,6 +93,16 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
+         // Validasi input
+         $request->validate([
+            'nama_product' => 'required|string|max:255',
+            'merk' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'stock' => 'required|integer|min:0',
+
+            
+        ]);
+
         $customer = Customers::find($id);
 
         //kiri harus sama dengan field di database, kanan dari name di form

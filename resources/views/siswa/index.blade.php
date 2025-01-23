@@ -33,6 +33,7 @@
                             <th scope="col">Nama</th>
                             <th scope="col">Jenis Kelamin</th>
                             <th scope="col">Kelas</th>
+                            <th scope="col">Cover</th>
                             <th scope="col" class="text-center">Action</th>
                           </tr>
                         </thead>
@@ -45,7 +46,10 @@
                             <td>{{ $data->nama }}</td>
                             <td>{{ $data->jenis_kelamin }}</td>
                             <td>{{ $data->kelas}}</td>
-                            <td class="text-center col-3">
+                            <td> 
+                              <img src="{{ asset('/images/siswa/' . $data->cover) }}" width="50" alt="">
+                            </td>
+                            <td class="text-center col-4">
                               <form action="{{ route('siswa.destroy' , $data->id) }}" method="post">
                                 <a href="{{ route('siswa.edit' , $data->id)}}" class="btn btn-sm btn-primary">Edit</a>
                                 <a href="{{ route('siswa.show' , $data->id)}}" class="btn btn-sm btn-warning">Show</a>

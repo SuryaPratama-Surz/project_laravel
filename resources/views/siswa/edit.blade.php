@@ -25,10 +25,12 @@
                           <label for="nis" class="form-label">NIS</label>
                           <input type="number" class="form-control" id="nis" name="nis" placeholder="Masukkan NIS"  value="{{ $siswa->nis }}" required>
                         </div> 
+                        
                         <div class="mb-3">
                           <label for="nama" class="form-label">Nama</label>
                           <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" value="{{ $siswa->nama }}" required>
                         </div>
+
                         <div class="mb-3">
                           <label for="jenis_kelamin" class="form-label">Jenis Kelamin : </label>
                          <input type="radio" id="jenis_kelamin" name="jenis_kelamin" value="Laki-laki">
@@ -39,13 +41,21 @@
                         </input>   
                         </div>
                         <div>
-                        <select name="kelas" id="" class="form-select" required>
+
+                        <select name="kelas" id="" class="form-select mb-2" required>
                             <option value="">Pilih Kelas</option>
                             <option value="XI RPL 1">XI RPL 1</option>
                             <option value="XI RPL 2">XI RPL 2</option>
                             <option value="XI RPL 3">XI RPL 3</option>
                         </select>
                         </div>
+
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Cover</label>
+                            <img src="{{ asset('/images/siswa/' . $siswa->cover) }}" width="100" alt="">
+                            <input type="file" class="form-control" id="Cover" name="cover" placeholder="Masukkan Cover" required>
+                       </div>
+
 
                     
                         <div>

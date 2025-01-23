@@ -43,6 +43,13 @@
                             <input type="text" class="form-control" value="{{ $siswa->kelas }}" disabled></input>
                         </div>
 
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Cover</label>
+                            <img src="{{ asset('/images/siswa/' . $siswa->cover) }}" width="100" alt="">
+                        </div>
+
+
+
                         <div>
                         <input type="submit" name="simpan" value="Kembali" class="btn btn-success mt-3">
                        </div>

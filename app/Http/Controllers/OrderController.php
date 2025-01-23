@@ -40,6 +40,16 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+         // Validasi input
+         $request->validate([
+            'nama_product' => 'required|string|max:255',
+            'merk' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'stock' => 'required|integer|min:0',
+
+            
+        ]);
+
         $order = new order;
 
         //kiri harus sama dengan field di database, kanan dari name di form
@@ -92,6 +102,17 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+         // Validasi input
+         $request->validate([
+            'nama_product' => 'required|string|max:255',
+            'merk' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'stock' => 'required|integer|min:0',
+
+            
+        ]);
+
         $order = order::FindOrFail($id);
 
         $order->id_product        = $request->id_product;

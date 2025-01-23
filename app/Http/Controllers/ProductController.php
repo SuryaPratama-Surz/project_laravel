@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Products;
 
 class ProductController extends Controller
-{
+{   
     /**
      * Display a listing of the resource.
      *
@@ -36,14 +36,32 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // Validasi input
+        $request->validate([
+            'nama_product' => 'required|string|max:255',
+            'merk' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'stock' => 'required|integer|min:0',
+
+            
+        ]);
+
+
+
         $products = new Products;
 
-        //kiri harus sama dengan field di database, kanan dari name di form
+        // kiri harus sama dengan field di database, kanan dari name di form
+        $products->nama_product = $request->nama_product;
+        $products->merk = $request->merk;
+        $products->price = $request->price;
+        $products->stock = $request->stock;
 
-        $products->nama_product              = $request->nama_product;
-        $products->merk                      = $request->merk;
-        $products->price                     = $request->price;
-        $products->stock                     = $request->stock;
+        if ($request->hasFile('cover')) {
+            $img = $request->file('cover');
+            $name = rand(1000, 9999) . $img->getClientOriginalName(); // Menggabungkan angka acak dengan nama file
+            $img->move('images/product', $name); // Memindahkan file ke folder yang dituju
+            $products->cover = $name; // Menyimpan nama file ke properti cover
+        }
 
         $products->save();
 
@@ -83,14 +101,29 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // Validasi input
+        $request->validate([
+            'nama_product' => 'required|string|max:255',
+            'merk' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'stock' => 'required|integer|min:0',
+        ]);
+
         $products = Products::FindOrFail($id);
 
-        $products ->nama_product            = $request->nama_product;
-        $products ->merk                    = $request->merk;
-        $products ->price                   = $request->price;
-        $products ->stock                   = $request->stock;
-      
-      
+        $products->nama_product = $request->nama_product;
+        $products->merk = $request->merk;
+        $products->price = $request->price;
+        $products->stock = $request->stock;
+
+
+        if ($request->hasFile('cover')) {
+            $img = $request->file('cover');
+            $name = rand(1000, 9999) . $img->getClientOriginalName(); // Menggabungkan angka acak dengan nama file
+            $img->move('images/product', $name); // Memindahkan file ke folder yang dituju
+            $products->cover = $name; // Menyimpan nama file ke properti cover
+        }
+
         $products->save();
 
         return redirect('product')->with('success', 'Data Berhasil Diupdate!');

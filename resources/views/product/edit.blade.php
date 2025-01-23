@@ -24,22 +24,53 @@
 
                         <div class="mb-3">
                           <label for="nis" class="form-label">Nama Product</label>
-                          <input type="text" class="form-control" id="nomor" name="nama_product" placeholder="Masukan Nomor"  value="{{ $products->nama_product }}" required>
+                          <input type="text" class="form-control" id="nomor" name="nama_product" placeholder="Masukan Product"  value="{{ $products->nama_product }}">
+                          @error('nama_product')
+                          <div class="invalid-feedback">
+                              {{ $message }}
+                          </div>
+                          @enderror
                         </div> 
 
                         <div class="mb-3">
                           <label for="nis" class="form-label">Merk</label>
-                          <input type="text" class="form-control" id="nomor" name="merk" placeholder="Masukan merk"  value="{{ $products->merk }}" required>
+                          <input type="text" class="form-control" id="nomor" name="merk" placeholder="Masukan merk"  value="{{ $products->merk }}">
+                          @error('merk')
+                          <div class="invalid-feedback">
+                              {{ $message }}
+                          </div>
+                      @enderror
                         </div>  
 
                         <div class="mb-3">
                           <label for="nis" class="form-label">Price</label>
-                          <input type="number" class="form-control" id="nomor" name="price" placeholder="Masukan price"  value="{{ $products->price }}" required>
+                          <input type="number" class="form-control" id="nomor" name="price" placeholder="Masukan price"  value="{{ $products->price }}">
+                          @error('price')
+                          <div class="invalid-feedback">
+                              {{ $message }}
+                          </div>
+                        @enderror
                         </div>
                         
                         <div class="mb-3">
                           <label for="nis" class="form-label">Stock</label>
-                          <input type="number" class="form-control" id="nomor" name="stock" placeholder="Masukan Stock"  value="{{ $products->stock }}" required>
+                          <input type="number" class="form-control" id="nomor" name="stock" placeholder="Masukan Stock"  value="{{ $products->stock }}">
+                          @error('stock')
+                          <div class="invalid-feedback">
+                              {{ $message }}
+                          </div>
+                        @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="nama" class="form-label mb-3 ">Cover</label>
+                            <img src="{{ asset('/images/product/' . $products->cover) }}" width="80" alt="">
+                            <input type="file" class=" mt-2 form-control" id="Cover" name="cover" placeholder="Masukkan Cover" required>
+                            @error('cover')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                        
                            
