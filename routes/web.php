@@ -11,7 +11,12 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\TelephonesController;
+use App\Http\Controllers\PenerbitController;    
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\PembeliController;
+use App\Http\Controllers\BukuController;
+use Illuminate\Routing\RouteUri;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -152,6 +157,10 @@ Route::resource('/produk', ProdukController::class);
 Route::resource('/product', ProductController::class);
 Route::resource('/customer', CustomerController::class);
 Route::resource('/order', OrderController::class);
+Route::resource('/penerbit', PenerbitController::class);
+Route::resource('/genre', GenreController::class);
+Route::resource('/pembeli', PembeliController::class);
+Route::resource('/buku', BukuController::class);
 
 
 
