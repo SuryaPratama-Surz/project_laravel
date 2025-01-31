@@ -16,6 +16,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\PembeliController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\TransaksiController;
 use Illuminate\Routing\RouteUri;
 use Illuminate\Support\Facades\Auth;
 
@@ -161,6 +162,7 @@ Route::resource('/penerbit', PenerbitController::class);
 Route::resource('/genre', GenreController::class);
 Route::resource('/pembeli', PembeliController::class);
 Route::resource('/buku', BukuController::class);
+Route::resource('/transaksi', TransaksiController::class);
 
 
 

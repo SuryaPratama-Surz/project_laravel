@@ -20,4 +20,10 @@ class Buku extends Model
     {
         return $this->belongsTo(Genre::class , 'id_genre');
     }
+
+    public function transaksi()
+    {
+        return $this->hasMany(transaksi::class);
+    }
+    
 }

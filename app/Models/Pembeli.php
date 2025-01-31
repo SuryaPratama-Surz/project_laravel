@@ -11,6 +11,10 @@ class Pembeli extends Model
     protected $fillable = ['id','nama_pembeli','jenis_kelamin','telepon'];
     public $timestamp = true;
 
+    public function transaksi()
+    {
+        return $this->hasMany(transaksi::class);
+    }
     
 
 }
