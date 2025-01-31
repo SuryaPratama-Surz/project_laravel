@@ -56,10 +56,8 @@
 
                         <!-- Input Image Buku -->
                         <div class="mb-3">
-                            <label for="image" class="form-label">Image Sebelumnya</label><br>
-                            <img src="{{ asset('images/buku/' . $buku->image) }}" width="70" alt="Image not found"><br><br>
-                            <label for="image" class="form-label">Tambahkan Image Baru?</label>
-                            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" placeholder="Choose new image">
+                            <label for="image" class="form-label">Image</label>
+                            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" placeholder="Masukkan Image Buku">
                             @error('image')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -98,7 +96,7 @@
                             </select>
                         </div>
 
-                        <input type="submit" name="simpan" value="simpan" class="btn btn-success mt-3">
+                        <input type="submit" name="simpan" value="Update" class="btn btn-success mt-3">
                     </form>
                 </div>
             </div>

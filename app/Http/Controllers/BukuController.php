@@ -50,7 +50,7 @@ class BukuController extends Controller
                 'id_genre' => 'required',
             ]);
     
-            $buku = new Buku;
+            $buku = new buku;
     
             //kiri harus sama dengan field di database, kanan dari name di form
             $buku->nama_buku        = $request->nama_buku;

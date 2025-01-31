@@ -15,17 +15,55 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header fw-bold">DATA JENIS GENRE</div>
+                <div class="card-header fw-bold">DATA BUKU</div>
                 <div class="card-body">
-                    <form action="{{ route('genre.index' , $genre->id) }}" 
+                    <form action="{{ route('buku.index' , $buku->id) }}" 
                         method="get" enctype="multipart/form-data">
                         @csrf
                         @method('get')
 
                         <div class="mb-3">
-                          <label for="nis" class="form-label">Jenis Genre</label>
-                          <input type="text" class="form-control" value="{{ $genre->genre }}" disabled>
+                          <label for="nis" class="form-label">Nama Buku</label>
+                          <input type="text" class="form-control" value="{{ $buku->nama_buku }}" disabled>
                         </div> 
+
+                        <div class="mb-3">
+                            <label for="nis" class="form-label">Harga</label>
+                            <input type="text" class="form-control" value="Rp. {{ number_format($buku->harga) }}" disabled>
+                        </div> 
+
+                        <div class="mb-3">
+                            <label for="nis" class="form-label">Stock</label>
+                            <input type="text" class="form-control" value="{{ $buku->stok }}" disabled>
+                        </div> 
+
+                        <div class="mb-3">
+                            <label for="nis" class="form-label">Image</label>
+                            <br>
+                            <img src="{{ asset('images/buku/' . $buku->image) }}" width="100" alt="Cover Image">
+                        </div> 
+
+                        <div class="mb-3">
+                            <label for="nis" class="form-label">ID Penerbit</label>
+                            <input type="text" class="form-control" value="{{ $buku->penerbit->nama_penerbit}}" disabled>
+                        </div> 
+
+                        <div class="mb-3">
+                            <label for="nis" class="form-label">Tahun Terbit</label>
+                            <input type="text" class="form-control" value="{{ $buku->tahun_terbit }}" disabled>
+                        </div> 
+
+                        <div class="mb-3">
+                            <label for="nis" class="form-label">ID Genre</label>
+                            <input type="text" class="form-control" value="{{ $buku->genre->genre }}" disabled>
+                        </div> 
+
+                        
+
+                        
+  
+  
+                        
 
                         <div>
                         <input type="submit" name="simpan" value="Kembali" class="btn btn-success mt-3">
