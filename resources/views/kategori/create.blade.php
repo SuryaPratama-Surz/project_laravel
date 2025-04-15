@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="row">
-`
+
 
                                         @if ($errors->any())
                                         <div class="alert alert-danger">

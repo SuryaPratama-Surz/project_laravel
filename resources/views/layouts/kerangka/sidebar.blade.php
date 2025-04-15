@@ -21,7 +21,7 @@
                 <!-- /input-group -->
             </li>
             <li>
-                <a href="#" class="active"><i class="fa fa-home fa-fw"></i> Beranda</a>
+                <a href="{{ route('home') }}" class="active"><i class="fa fa-home fa-fw"></i> Beranda</a>
             </li>
             <li>
                 <a href="{{ route('siswa.index') }}"><i class="fa fa-user fa-fw"></i> Siswa</a>
@@ -30,7 +30,7 @@
                 <a href="{{ route('produk.index') }}"><i class="fa fa-paypal fa-fw"></i> Produk</a>
             </li>
             <li>
-                <a href="{{ route('kategori.index') }}"><i class="fa fa-instagram fa-fw"></i> Kategori</a>
+                <a href="{{ route('kategori.index') }}"><i class="fa fa-th-large fa-fw"></i> Kategori</a>
             </li>
          
             

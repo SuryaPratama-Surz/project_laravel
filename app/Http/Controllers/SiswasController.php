@@ -42,6 +42,23 @@ class SiswasController extends Controller
      */
     public function store(Request $request)
     {
+
+        //validasi
+
+        $request->validate([
+            'nis'              => 'required|numeric',
+            'nama'             => 'required|string|max:255',
+            'jenis_kelamin'    => 'required',
+            'kelas'            => 'required',
+            'cover'            => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ], [
+            'nis.required' => 'NIS wajib diisi.',
+            'nis.numeric' => 'NIS harus berupa angka.',
+            'nama.required' => 'Nama wajib diisi.',
+            'jenis_kelamin.required' => 'Jenis kelamin wajib dipilih.',
+            'kelas.required' => 'Kelas wajib dipilih.',
+        ]);
+        
         $siswa = new Siswa;
 
         //kiri harus sama dengan field di database, kanan dari name di form

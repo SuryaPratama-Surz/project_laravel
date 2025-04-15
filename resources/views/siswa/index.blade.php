@@ -73,6 +73,7 @@
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                           {{ session('success') }} <a href="#" class="alert-link"></a>
                         @endif
+                        </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Data Siswa</h3>

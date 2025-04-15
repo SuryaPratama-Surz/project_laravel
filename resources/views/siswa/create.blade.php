@@ -87,17 +87,17 @@
                                             <form action="{{ route('siswa.store') }}" method="post" enctype="multipart/form-data">@csrf
 
                                                 <div class="form-group">
-                                                    <label> <i class="fa fa-graduation-cap"></i> Nis (Nomor Induk Siswa)</label>
+                                                    <label> <i class="fa fa-graduation-cap"></i> NIS (Nomor Induk Siswa)</label>
                                                     <input  type="number" class="form-control" name="nis" placeholder="Masukkan NIS" required>
                                                 </div>
 
                                                 <div class="form-group">
-                                                     <label> <i class="fa fa-user"></i> Nama Lengkap</label>
+                                                     <label><i class="fa fa-user"></i>  Nama Lengkap</label>
                                                     <input  type="text" class="form-control" name="nama" placeholder="Masukkan Nama" required>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label><i class="fa fa-mars"></i>.<i class="fa-venus fa"></i> Jenis Kelamin</label><br>
+                                                    <label><i class=" fa fa-venus-mars"> </i> Jenis Kelamin</label><br>
                                                     <input type="radio" id="jenis_kelamin" name="jenis_kelamin" value="Laki-laki">
                                                     Laki-laki
                                                     </input>
@@ -107,7 +107,7 @@
                                              </div>
 
                                              <div class="form-group">
-                                                <label>Kelas</label>
+                                                <label> <i class="fa-mortar-board fa"> </i> Kelas</label>
                                                 <select name="kelas" id="" class="form-control" required>
                                                     <option value="">Pilih Kelas</option>
                                                     <option value="XI RPL 1">XI RPL 1</option>
@@ -117,13 +117,14 @@
                                              </div>
 
                                             <div class="form-group">
-                                                <label>Cover</label>
+                                                <label> <i class="fa fa-photo"></i> Cover</label>
                                                 <input type="file" class="" id="cover" name="cover" placeholder="Masukkan Cover" required>
                                             </div>
 
                                             <div class="form-group">
-                                                <input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
-                                            </div>             
+                                                <input type="submit" name="simpan" value="Simpan" class="btn btn-primary"> 
+                                                <a href="{{ route('siswa.index') }}" class="btn btn-danger">Kembali</a>
+                                            </div>
 
                                            </form>
                                         </div>
