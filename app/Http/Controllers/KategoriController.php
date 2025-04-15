@@ -36,6 +36,17 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
+
+        
+        $request->validate([
+            'nama_kategori' => 'required|string|max:255',
+        ], [
+            'nama_kategori.required' => 'Nama kategori wajib diisi.',
+            'nama_kategori.string' => 'Nama kategori harus berupa teks.',
+            'nama_kategori.max' => 'Nama kategori tidak boleh lebih dari 255 karakter.',
+        ]);
+        
+
         $kategori = new kategori;
 
         //kiri harus sama dengan field di database, kanan dari name di form

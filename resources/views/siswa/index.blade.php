@@ -68,6 +68,11 @@
                     <!-- /.row -->
                     <div class="row">
                       <div class="col-lg-12">
+                        @if (session('success'))
+                        <div class="alert alert-success alert-dismissible fade in">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                          {{ session('success') }} <a href="#" class="alert-link"></a>
+                        @endif
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Data Siswa</h3>

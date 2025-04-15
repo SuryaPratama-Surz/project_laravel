@@ -29,6 +29,9 @@
             <li>
                 <a href="{{ route('produk.index') }}"><i class="fa fa-paypal fa-fw"></i> Produk</a>
             </li>
+            <li>
+                <a href="{{ route('kategori.index') }}"><i class="fa fa-instagram fa-fw"></i> Kategori</a>
+            </li>
          
             
                 <!-- /.nav-second-level -->

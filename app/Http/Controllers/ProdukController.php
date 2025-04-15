@@ -38,6 +38,17 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'nama_produk' => 'required|string|max:255',
+            'harga' => 'required|string|max:255',
+            'stok' => 'required|min:0',
+            'id_kategori' => 'required|min:0',
+       ]);
+
+
+
+
         $produk = new produk;
 
         //kiri harus sama dengan field di database, kanan dari name di form

@@ -61,6 +61,11 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
+                            @if (session('success'))
+                            <div class="alert alert-success alert-dismissible fade in">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                              {{ session('success') }} <a href="#" class="alert-link"></a>
+                            @endif
                             <h1 class="page-header">Data Produk</h1>
                         </div>
                         <!-- /.col-lg-12 -->

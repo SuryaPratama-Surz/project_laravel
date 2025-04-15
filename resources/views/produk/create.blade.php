@@ -61,6 +61,15 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                                 <ul>
+                                    @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                 </ul>
+                            </div>
+                            @endif
                             <h1 class="page-header">Menambahkan Data </h1>
                         </div>
                         <!-- /.col-lg-12 -->
