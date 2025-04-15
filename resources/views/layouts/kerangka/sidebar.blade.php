@@ -21,10 +21,13 @@
                 <!-- /input-group -->
             </li>
             <li>
-                <a href="index.html" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                <a href="#" class="active"><i class="fa fa-home fa-fw"></i> Beranda</a>
             </li>
             <li>
-                <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                <a href="{{ route('siswa.index') }}"><i class="fa fa-user fa-fw"></i> Siswa</a>
+            </li>
+            <li>
+                <a href="{{ route('produk.index') }}"><i class="fa fa-paypal fa-fw"></i> Produk</a>
             </li>
          
             

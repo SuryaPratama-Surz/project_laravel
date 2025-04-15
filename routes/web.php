@@ -35,6 +35,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/form/{name}/{umur}', function ($name, $umur) {
     return 'Selamat datang '. $name . 
             '<br> Anda berusia ' . $umur . ' tahun';
