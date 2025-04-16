@@ -67,7 +67,7 @@
                     </div>
                     <!-- /.row -->
                     <div class="row">
-                        <div class="col-lg-5 col-md-12">
+                        <div class="col-lg-4 col-md-12">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
                                     <div class="row">
@@ -84,7 +84,50 @@
                                     <div class="panel-footer">
                                         <span class="pull-left">Lihat data</span>
                                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="panel panel-green">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-paypal fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge">{{ \App\Models\Produk::count() }} Data</div>
+                                            <div>Produk yang terdata.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ route('produk.index') }}">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">Lihat data</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="panel panel-yellow">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-th-large fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge">{{ \App\Models\Kategori::count() }} Data</div>
+                                            <div>Kategori yang terdata.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ route('kategori.index') }}">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">Lihat data</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                         <div class="clearfix"></div>
                                     </div>
                                 </a>

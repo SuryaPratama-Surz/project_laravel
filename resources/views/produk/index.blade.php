@@ -66,8 +66,9 @@
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                               {{ session('success') }} <a href="#" class="alert-link"></a>
                             @endif
-                            <h1 class="page-header">Data Produk</h1>
+                          
                         </div>
+                        <h1 class="page-header">Data Produk</h1>
                         <!-- /.col-lg-12 -->
                     </div>
                     <!-- /.row -->
