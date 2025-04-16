@@ -60,20 +60,18 @@
                 {{-- CONTENT --}}
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-12">
-                            @if (session('success'))
-                            <div class="alert alert-success alert-dismissible fade in">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                              {{ session('success') }} <a href="#" class="alert-link"></a>
-                            @endif
-                          
-                        </div>
                         <h1 class="page-header">Data Produk</h1>
                         <!-- /.col-lg-12 -->
                     </div>
                     <!-- /.row -->
                     <div class="row">
                       <div class="col-lg-12">
+                        @if (session('success'))
+                        <div class="alert alert-success alert-dismissible fade in">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                          {{ session('success') }} <a href="#" class="alert-link"></a>
+                        @endif
+                        </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Data Produk</h3>
