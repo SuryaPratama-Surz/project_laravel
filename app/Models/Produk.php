@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Produk extends Model
 {
     use HasFactory;
-    protected $fillable = ['id','nama_produk','harga','stok','id_kategori'];
+    protected $fillable = ['id','nama_produk','harga','stok','id_kategori','gambar','deskripsi'];
     public $timestamp = true;
 
     public function kategori(){

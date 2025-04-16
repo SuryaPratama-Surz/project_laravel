@@ -101,8 +101,20 @@
                                                     <option value="{{ $data->id }}" {{ $produk->id_kategori == $data->id ? 'selected' : '' }}>{{ $data->nama_kategori }}</option>
                                                     @endforeach
                                                 </select>
-                                                  
                                              </div>
+
+                                             <div class="mb-3">
+                                                <label for="nama" class="form-label mb-3 ">Cover</label>
+                                                <img src="{{ asset('/images/produk/' . $produk->gambar) }}" width="80" alt="">
+                                                <input type="file" class=" mt-2 form-control" id="Cover" name="gambar" placeholder="Masukkan Cover" required>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="nama" class="form-label">Deskripsi</label>
+                                                <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control" placeholder="Masukkan Deskripsi">{{ $produk->deskripsi }}</textarea>
+                                            </div>
+
+                                            
 
                                            
                                             <div class="form-group">

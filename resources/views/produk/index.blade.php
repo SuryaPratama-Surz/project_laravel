@@ -89,6 +89,8 @@
                                               <th scope="col">Harga</th>
                                               <th scope="col">Stok</th>
                                               <th scope="col">Id_Kategori</th>
+                                              <th scope="col">Cover</th>
+                                              <th scope="col">Deskripsi</th>
                                               <th scope="col" class="text-center">Action</th>
                                             </tr>
                                         </thead>
@@ -101,6 +103,10 @@
                                             <td>{{ $data->harga }}</td>
                                             <td>{{ $data->stok }}</td>
                                             <td>{{ $data->kategori->nama_kategori}}</td>
+                                            <td> 
+                                                <img src="{{ asset('/images/produk/' . $data->gambar) }}" width="70" alt="">
+                                            </td>  
+                                            <td>{{ $data->deskripsi }}</td>
                                             <td class="text-center">
                                                 <form action="{{ route('produk.destroy', $data->id) }}" method="POST">@csrf
                                                     @method('DELETE')

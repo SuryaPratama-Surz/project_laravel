@@ -167,6 +167,7 @@ Route::resource('/genre', GenreController::class);
 Route::resource('/pembeli', PembeliController::class);
 Route::resource('/buku', BukuController::class);
 Route::resource('/transaksi', TransaksiController::class);
+Route::resource('/front', FrontController::class);
 
 
 

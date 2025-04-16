@@ -96,8 +96,18 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                        <label for="nis" class="form-label">ID Kategori</label>
+                                                        <label for="kategori" class="form-label">ID Kategori</label>
                                                         <input type="text" class="form-control" value="{{ $produk->kategori->nama_kategori }}" disabled>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="gambar" class="form-label">Cover</label>
+                                                    <img src="{{ asset('/images/produk/' . $produk->gambar) }}" width="100" alt="">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="deskripsi" class="form-label">Deskripsi</label>
+                                                    <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control" disabled>{{ $produk->deskripsi }}</textarea>
                                                 </div>
 
                                             

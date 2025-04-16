@@ -62,7 +62,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="{{ asset('/images/produk/' . $data->gambar) }}" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -76,15 +76,23 @@
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">Rp.13.000.000</span>
-                                    Rp.5.000.000
+                                   
+                                     <!-- Product price-->
+                                     <b> Rp.{{ number_format($data->harga, 0, ',', '.') }} </b>
+                                   
+                                      {{-- Kategori --}}
+                                    <p>
+                                    Kategori:
+                                    <i>{{ $data->kategori->nama_kategori}}</i>
+                                    </p>
+                                   
                                 </div>
                             </div>
                       
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ route('front.show', $data->id) }}">Lihat Detail</a>
+                                </div>
                             </div>
                         </div>
                     </div>

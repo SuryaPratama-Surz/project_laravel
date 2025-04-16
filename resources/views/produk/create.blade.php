@@ -110,8 +110,17 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-                                            <br>
+                                            
+                                            <div class="mb-3">
+                                                <label for="nama" class="form-label">Cover</label>
+                                                <input type="file" class="form-control" id="Cover" name="gambar" placeholder="Masukkan Cover" required>
+                                           </div>
 
+                                            <div class="mb-3">
+                                                <label for="nama" class="form-label">Deskripsi</label>
+                                                <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control" placeholder="Masukkan Deskripsi"></textarea>
+                                            </div>
+                
                                             <div class="form-group">
                                                 <input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
                                             </div>             

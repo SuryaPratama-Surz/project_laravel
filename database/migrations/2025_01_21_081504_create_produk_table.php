@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('harga');
             $table->integer('stok');
             $table->unsignedBigInteger('id_kategori');
+            $table->string('gambar');
+            $table->text('deskripsi');
 
              //menyambungkan foreign key ke
              $table->foreign('id_kategori')->references('id')->on('Kategoris')->onDelete('cascade');

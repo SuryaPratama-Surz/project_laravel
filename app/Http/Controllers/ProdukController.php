@@ -44,6 +44,8 @@ class ProdukController extends Controller
             'harga' => 'required|string|max:255',
             'stok' => 'required|min:0',
             'id_kategori' => 'required|min:0',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:5000',
+            'deskripsi' => 'required|string|max:255',
        ]);
 
 
@@ -57,6 +59,16 @@ class ProdukController extends Controller
         $produk->harga                    = $request->harga;
         $produk->stok                     = $request->stok;
         $produk->id_kategori              = $request->id_kategori;
+       
+        if ($request->hasFile('gambar')) {
+            $img = $request->file('gambar');
+            $name = rand(1000, 9999) . $img->getClientOriginalName(); // Menggabungkan angka acak dengan nama file
+            $img->move('images/produk', $name); // Memindahkan file ke folder yang dituju
+            $produk->gambar = $name; // Menyimpan nama file ke properti cover
+        }
+
+
+        $produk->deskripsi                = $request->deskripsi;
       
       
         $produk->save();
@@ -104,6 +116,13 @@ class ProdukController extends Controller
         $produk ->harga                   = $request->harga;
         $produk ->stok                    = $request->stok;
         $produk ->id_kategori             = $request->id_kategori;
+        if ($request->hasFile('gambar')) {
+            $img = $request->file('gambar');
+            $name = rand(1000, 9999) . $img->getClientOriginalName(); // Menggabungkan angka acak dengan nama file
+            $img->move('images/produk', $name); // Memindahkan file ke folder yang dituju
+            $produk->gambar = $name; // Menyimpan nama file ke properti cover
+        }
+        $produk->deskripsi                = $request->deskripsi;
       
         $produk->save();
 
