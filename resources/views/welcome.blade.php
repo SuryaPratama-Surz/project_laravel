@@ -47,7 +47,7 @@
             </div>
         </nav>
         <!-- Header-->
-        <header class="py-3" style="background-image: url({{ asset('/images/kayuk.jpeg') }}); background-size: cover; background-position: center; background-repeat: no-repeat; height: 300px;">
+        <header class="py-3" style="background-image: url({{ asset('/images/pexels-zetong-li-880728-13700906.jpg') }}); background-size: cover; background-position: center; background-repeat: no-repeat; height: 300px;">
             <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white" style=" padding: 20px; border-radius: 10px;">
                 <h1 class="display-4 fw-bold text-uppercase" style="font-family: 'Arial', sans-serif; letter-spacing: 2px;">Welcome to UpidDuo Store</h1>
