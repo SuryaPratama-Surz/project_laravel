@@ -16,6 +16,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\PembeliController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\TransaksiController;
 use Illuminate\Routing\RouteUri;
 use Illuminate\Support\Facades\Auth;
@@ -31,9 +32,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [FrontController::class, 'index']);
 
 
 Route::get('/form/{name}/{umur}', function ($name, $umur) {
